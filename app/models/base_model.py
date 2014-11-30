@@ -1,5 +1,3 @@
-import connections
-
 
 class BaseModel:
 
