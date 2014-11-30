@@ -8,5 +8,4 @@ def get_client(client):
     '''
     Get client information
     '''
-    print client
-    return {"client": {"client_1": {"First": "Adriel", "Last": "Velazquez"}}}
+    return {"client": client.name}

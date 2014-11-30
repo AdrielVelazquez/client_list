@@ -1,10 +1,11 @@
+import connections
 
 
 class BaseModel:
-    def __init__(self):
-        self._id = None
 
     @staticmethod
-    def get_doc(class_id):
-        pass
+    def get_doc(db, class_id, type):
+        doc = db.get(type + "_" + class_id)
+        return doc
+
 
