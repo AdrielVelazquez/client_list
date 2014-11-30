@@ -8,4 +8,4 @@ def get_client(client):
     '''
     Get client information
     '''
-    return {"client": client.name}
+    return {"client": client.name, "Exists": client.exists}
