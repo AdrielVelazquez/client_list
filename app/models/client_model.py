@@ -11,7 +11,6 @@ class ClientModel(base_model.BaseModel):
         The init accepts the class_id and then checks to see if the document exists
         Else the init will assign the name as None
         '''
-        #TODO: There's some type of redundancy happening in get_doc function, called twice
         doc = self.get_doc(self.db, class_id, self.type_name)
         if doc:
             self.name = doc.get("name")

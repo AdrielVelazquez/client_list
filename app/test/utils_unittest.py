@@ -31,6 +31,9 @@ def tear_down_database(db_name, delete=True,
 
 
 def load_generic_client__data(db=None):
+    '''
+    Creates generic information to be loaded into the test DB
+    '''
     docs = []
     for i in range(5):
         temp_doc = {}
