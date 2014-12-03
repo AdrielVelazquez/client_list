@@ -48,6 +48,7 @@ Configs can be altered with
 ## Endpoints
 
 The endpoint accepts the id in the url
+
 `/api/client/<client-id>`
 
 The endpoint returns a json
