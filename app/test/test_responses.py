@@ -26,6 +26,7 @@ class TestResponses(unittest.TestCase):
         print "ApiSigninTestCase: tear down"
         utils_unittest.tear_down_database(db_name=app.config['CLIENT_DB'], delete=True)
 
+
     def testAccurateData(self):
         '''
         Testing the data is built properly.
@@ -43,3 +44,7 @@ class TestResponses(unittest.TestCase):
         response = self.app.get('/api/client/0', content_type='application/x-www-form-urlencoded')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.data, '{"client": "name_0", "Exists": true}')
+
+        # Test Bad input
+        response = self.app.get('/api/client/ZZZ', content_type='application/x-www-form-urlencoded')
+        self.assertEqual(response.data, '{"client": null, "Exists": false}')
