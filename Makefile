@@ -1,5 +1,6 @@
 SHELL = /bin/sh +x
 VIRTUALENV_NAME ?= default_app
+TEST_CONFIG_DIR = ${PWD}/app/test/config_test.py
 
 # Each of your targets should be listed as .PHONY (unless you are actually
 # compiling a C source file or similar)
@@ -12,7 +13,7 @@ install: virtualenv
 	. ./bin/activate && sudo apt-get install couchdb
 
 test:
-	. ./bin/activate && nosetests  -sv ./app/test/
+	. ./bin/activate && export CLIENT_CONFIG="$(TEST_CONFIG_DIR)" && nosetests  -sv ./app/test/
 
 virtualenv:
 	virtualenv --python=python2.7 --no-site-packages --setuptools --prompt="[$(VIRTUALENV_NAME)]" . && \
